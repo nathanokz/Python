@@ -1,10 +1,15 @@
-tempo = float(input('Insira o tempo em minutos que você ficou no estacionamento:'))
-tempo2 = tempo - 60
-preco = 8
-if tempo == 60:
-    print('O valor a ser pago é:', preco, 'reais')
-elif tempo > 60:
-    print('O valor a ser pago é:', tempo + 1.5 + 8, 'reais')
+tempo = int(input('Insira quanto tempo você passou no estacionamento em minutos:'))
+valor = 8
+valor2 = 1.50
+if tempo <= 60:
+    print('Valor mínimo: 8 reais ')
+else:
+    minutosexcedentes = tempo - 60
+    partes = (minutosexcedentes + 14) // 15
+    valortotal = valor + (partes * valor2)
+    print('Valor total é de:', valortotal, 'reais')
+
+
 
 
 
