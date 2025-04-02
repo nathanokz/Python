@@ -70,7 +70,7 @@ elif entradas == 3:
 else:
     print('Modalidade inválidade. Tente novamente.')
 
-#            print('Player 1 =', placarplayer1, 'pontos','\nPlayer 2 =', placarplayer2, 'pontos' )
+
 
 
 
