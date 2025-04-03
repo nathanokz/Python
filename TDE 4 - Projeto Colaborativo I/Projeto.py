@@ -20,6 +20,7 @@ if entradas == 1:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 1 and jogadas2 == 3:
@@ -29,6 +30,7 @@ if entradas == 1:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 2 and jogadas2 == 1:
@@ -38,6 +40,7 @@ if entradas == 1:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 2 and jogadas2 == 3:
@@ -47,6 +50,7 @@ if entradas == 1:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 3 and jogadas2 == 1:
@@ -56,6 +60,7 @@ if entradas == 1:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 3 and jogadas2 == 2:
@@ -65,7 +70,42 @@ if entradas == 1:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
+
+        if jogadas1 == 1 and jogadas2 == 1:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarplayer1 += 0
+            placarplayer2 += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadas1 == 2 and jogadas2 == 2:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarplayer1 += 0
+            placarplayer2 += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadas1 == 3 and jogadas2 == 3:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarplayer1 += 0
+            placarplayer2 += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Player 1 =', placarplayer1, 'pontos', '\nPlayer 2 =', placarplayer2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
     contador += 1
 
 elif entradas == 2:
@@ -93,6 +133,7 @@ elif entradas == 2:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 1 and jogadasbot == 3:
@@ -104,6 +145,7 @@ elif entradas == 2:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 2 and jogadasbot == 1:
@@ -115,6 +157,7 @@ elif entradas == 2:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 2 and jogadasbot == 3:
@@ -126,6 +169,7 @@ elif entradas == 2:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 3 and jogadasbot == 1:
@@ -137,6 +181,7 @@ elif entradas == 2:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadas1 == 3 and jogadasbot == 2:
@@ -148,7 +193,42 @@ elif entradas == 2:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
+
+        if jogadas1 == 1 and jogadasbot == 1:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarplayer1 += 0
+            placarbot += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadas1 == 2 and jogadasbot == 2:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarplayer1 += 0
+            placarbot += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadas1 == 3 and jogadasbot == 3:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarplayer1 += 0
+            placarbot += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Player 1 =', placarplayer1, 'pontos', '\nBot =', placarbot, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
     contador += 1
 
 
@@ -181,7 +261,9 @@ elif entradas == 3:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
+
 
         if jogadasbot1 == 1 and jogadasbot2 == 3:
             print('Bot 1 escolheu:', numeros1)
@@ -193,6 +275,7 @@ elif entradas == 3:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadasbot1 == 2 and jogadasbot2 == 1:
@@ -205,6 +288,7 @@ elif entradas == 3:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadasbot1 == 2 and jogadasbot2 == 3:
@@ -217,6 +301,7 @@ elif entradas == 3:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadasbot1 == 3 and jogadasbot2 == 1:
@@ -229,6 +314,7 @@ elif entradas == 3:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Bot 1 =', placarbot1, 'pontos', '\nBot 2=', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
         if jogadasbot1 == 3 and jogadasbot2 == 2:
@@ -241,6 +327,40 @@ elif entradas == 3:
             if opcao == 2:
                 print('--------------------------------------------------------------------------------------')
                 print('Bot 1 =', placarbot1, 'pontos', '\nBot 2=', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadasbot1 == 1 and jogadasbot2 == 1:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarbot1 += 0
+            placarbot2 += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadasbot1 == 2 and jogadasbot2 == 2:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarbot1 += 0
+            placarbot2 += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
+                break
+
+        if jogadasbot1 == 3 and jogadasbot2 == 3:
+            print('Empate!')
+            opcao = int(input('Deseja continuar? 1 - SIM e 2 - NÃO \nSelecione a opção:'))
+            placarbot1 += 0
+            placarbot2 += 0
+            if opcao == 2:
+                print('--------------------------------------------------------------------------------------')
+                print('Bot 1 =', placarbot1, 'pontos', '\nBot 2 =', placarbot2, 'pontos')
+                print('Obrigado por utilizar o programa! \nFeito por: João, Hugo, Nathan e Heitor.')
                 break
 
     contador += 1
