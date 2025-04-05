@@ -235,10 +235,10 @@ elif entradas == 2:
 elif entradas == 3:
     import random
 
-    numeros1 = random.randint(0, 3)
+    numeros1 = random.randint(1, 3)
     import random
 
-    numeros2 = random.randint(0, 3)
+    numeros2 = random.randint(1, 3)
     print('Modalidade selecionada: Bot x Bot')
     print('Regras do jogo: Pedra ganha da tesoura / Tesoura ganha do papel / Papel ganha da pedra')
 
@@ -364,7 +364,6 @@ elif entradas == 3:
                 break
 
     contador += 1
-
 
 
 
