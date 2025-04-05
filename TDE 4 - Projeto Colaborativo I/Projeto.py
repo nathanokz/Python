@@ -111,7 +111,6 @@ if entradas == 1:
 elif entradas == 2:
     import random
 
-    numeros = random.randint(1, 3)
     print('Modalidade selecionada: Player x Bot')
     print('Regras do jogo: Pedra ganha da tesoura / Tesoura ganha do papel / Papel ganha da pedra')
 
@@ -121,6 +120,9 @@ elif entradas == 2:
     contador = 1
     while contador:
         print('--------------------------------------------------------------------------------------')
+
+        numeros = random.randint(1, 3)
+
         jogadas1 = int(input('Pedra - 1, Papel - 2 e Tesoura - 3 \nSelecione sua jogada:'))
         jogadasbot = numeros
 
@@ -235,10 +237,6 @@ elif entradas == 2:
 elif entradas == 3:
     import random
 
-    numeros1 = random.randint(1, 3)
-    import random
-
-    numeros2 = random.randint(1, 3)
     print('Modalidade selecionada: Bot x Bot')
     print('Regras do jogo: Pedra ganha da tesoura / Tesoura ganha do papel / Papel ganha da pedra')
 
@@ -248,6 +246,12 @@ elif entradas == 3:
     contador = 1
     while contador:
         print('--------------------------------------------------------------------------------------')
+
+        numeros1 = random.randint(1, 3)
+        import random
+
+        numeros2 = random.randint(1, 3)
+
         jogadasbot1 = numeros1
         jogadasbot2 = numeros2
 
@@ -364,6 +368,5 @@ elif entradas == 3:
                 break
 
     contador += 1
-
 
 
