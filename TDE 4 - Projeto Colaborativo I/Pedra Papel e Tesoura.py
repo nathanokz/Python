@@ -14,6 +14,7 @@ while contador == 1:
             placarempate += 1
         elif (jogada1 == 1 and jogada2 == 3) or (jogada1 == 2 and jogada2 == 1) or (jogada1 == 3 and jogada2 == 2):
             print('Player 1 jogou', jogadas[jogada1], 'e o Player 2 jogou', jogadas[jogada2], '!' 'Player 1 venceu!')
+            placarjogada1 += 1
         else:
             print('Player 1 jogou', jogadas[jogada1], 'e o Player 2 jogou', jogadas[jogada2], '!' 'Player 2 venceu!')
             placarjogada2 += 1
