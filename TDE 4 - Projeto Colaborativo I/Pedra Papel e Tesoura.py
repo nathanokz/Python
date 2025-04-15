@@ -5,41 +5,41 @@ placarjogada1 = 0
 placarjogada2 = 0
 placarempate = 0
 while contador == 1:
+    jogadas = {1: 'Pedra', 2: 'Papel', 3: 'Tesoura'}
     if modalidade == 1:
         jogada1 = int(input('Selecione uma jogada: (1) Pedra, (2) Papel e (3) Tesoura'))
         jogada2 = int(input('Selecione uma jogada: (1) Pedra, (2) Papel e (3) Tesoura'))
         if jogada1 == jogada2:
-            print('Empate!')
+            print('Player 1 jogou', jogadas[jogada1], 'e o Player 2 jogou', jogadas[jogada2], '!' 'Empate!')
             placarempate += 1
         elif (jogada1 == 1 and jogada2 == 3) or (jogada1 == 2 and jogada2 == 1) or (jogada1 == 3 and jogada2 == 2):
-            print('Player 1 venceu!')
-            placarjogada1 += 1
+            print('Player 1 jogou', jogadas[jogada1], 'e o Player 2 jogou', jogadas[jogada2], '!' 'Player 1 venceu!')
         else:
-            print('Player 2 venceu!')
+            print('Player 1 jogou', jogadas[jogada1], 'e o Player 2 jogou', jogadas[jogada2], '!' 'Player 2 venceu!')
             placarjogada2 += 1
     elif modalidade == 2:
         jogada1 = int(input('Selecione uma jogada: (1) Pedra, (2) Papel e (3) Tesoura'))
         jogadabot1 = random.randint(1, 3)
         if jogada1 == jogadabot1:
-            print('Empate!')
+            print('Player 1 jogou', jogadas[jogada1], 'e o Bot jogou', jogadas[jogadabot1], '!' 'Empate!')
             placarempate += 1
         elif (jogada1 == 1 and jogadabot1 == 3) or (jogada1 == 2 and jogadabot1 == 1) or (jogada1 == 3 and jogadabot1 == 2):
-            print('Player 1 venceu!')
+            print('Player 1 jogou', jogadas[jogada1], 'e o Bot jogou', jogadas[jogadabot1], '!' 'Player 1 venceu!')
             placarjogada1 += 1
         else:
-            print('O Bot venceu!')
+            print('Player 1 jogou', jogadas[jogada1], 'e o Bot jogou', jogadas[jogadabot1], '!' 'Player 2 venceu!')
             placarjogada2 += 1
     elif modalidade == 3:
         jogadabot1 = random.randint(1, 3)
         jogadabot2 = random.randint(1, 3)
         if jogadabot1 == jogadabot2:
-            print('Empate!')
+            print('Bot 1 jogou', jogadas[jogadabot1], 'e o Bot 2 jogou', jogadas[jogadabot2], '!' 'Empate!')
             placarempate += 1
         elif (jogadabot1 == 1 and jogadabot2 == 3) or (jogadabot1 == 2 and jogadabot2 == 1) or (jogadabot1 == 3 and jogadabot2 == 2):
-            print('O Bot 1 venceu!')
+            print('Bot 1 jogou', jogadas[jogadabot1], 'e o Bot 2 jogou', jogadas[jogadabot2], '!' 'Bot 1 venceu!')
             placarjogada1 += 1
         else:
-            print('O Bot 2 venceu!')
+            print('Bot 1 jogou', jogadas[jogadabot1], 'e o Bot 2 jogou', jogadas[jogadabot2], '!' 'Bot 2 venceu!')
             placarjogada2 += 1
     continuar = input('Deseja continuar? (s) Sim e (n) Não')
     if modalidade == 1:
