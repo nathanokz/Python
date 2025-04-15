@@ -27,7 +27,7 @@ while contador == 1:
             print('Player 1 jogou', jogadas[jogada1], 'e o Bot jogou', jogadas[jogadabot1], '!' 'Player 1 venceu!')
             placarjogada1 += 1
         else:
-            print('Player 1 jogou', jogadas[jogada1], 'e o Bot jogou', jogadas[jogadabot1], '!' 'Player 2 venceu!')
+            print('Player 1 jogou', jogadas[jogada1], 'e o Bot jogou', jogadas[jogadabot1], '!' 'O Bot venceu!')
             placarjogada2 += 1
     elif modalidade == 3:
         jogadabot1 = random.randint(1, 3)
