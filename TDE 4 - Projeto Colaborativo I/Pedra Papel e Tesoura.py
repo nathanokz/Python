@@ -50,6 +50,7 @@ while contador == 1:
             placarjogada2 += 1
     
     continuar = input('Deseja continuar? (s) Sim e (n) Não')
+    
     if modalidade == 1:
         if continuar == 'n':
             print('Placar: Player 1 = {} pontos, Player 2 = {} pontos e Empates = {} \nObrigado por jogar! Feito por: Heitor, Hugo, João e Nathan'.format(placarjogada1, placarjogada2, placarempate))
