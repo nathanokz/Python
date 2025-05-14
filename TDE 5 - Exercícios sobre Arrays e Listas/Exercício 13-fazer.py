@@ -1,6 +1,12 @@
 vetor = []
 for i in range(20):
-    a = int(input('insira um numero'))
+    a = int(input('Insira um número: '))
     vetor.append(a)
-vetor[19] = min(vetor)
-
+posicoes = len(vetor)
+for i in range(posicoes - 1):
+    menor = i
+    for a in range(i + 1, posicoes):
+        if vetor[a] < vetor[menor]:
+            menor = a
+    vetor[i], vetor[menor] = vetor[menor], vetor[i]
+print("Vetor ordenado:", vetor)
