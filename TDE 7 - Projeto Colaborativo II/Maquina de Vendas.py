@@ -8,7 +8,7 @@ valoresQuantidades = [
 
 produtos = ['Coca-cola', 'Pepsi', 'Monster', 'Café', 'RedBull']
 
-def comprar_produto():
+def selecionar_produto():
     contador = 0
     print('-' * 20)
     print('lista de produtos:')
@@ -18,7 +18,7 @@ def comprar_produto():
     print('-' * 20)
     produto = int(input('selecione o item desejado:'))
     return produto
-produto = comprar_produto()
+produto = selecionar_produto()
 
 def se_estiver_disponivel():
     contador = produto
@@ -26,7 +26,7 @@ def se_estiver_disponivel():
         print(f'produto disponivel! ha {valoresQuantidades[contador][2]} unidades')
         print('-' * 20)
         disponivel = valoresQuantidades[contador][2] - 1
-        return print()
+        return disponivel
     else:
         print('produto indisponivel')
 estoque = se_estiver_disponivel()
