@@ -6,51 +6,59 @@ valoresQuantidades = [
     [5, 13.99, 2]
 ]
 
-produtos = ['Coca-cola', 'Pepsi', 'Monster', 'Café', 'RedBull']
+produtos = ['Coca-Cola', 'Pepsi', 'Monster', 'Café', 'Redbull']
 
-def selecionar_produto():
+dinheiro = [100, 50, 20, 10, 5, 2, 1, 0.50, 0.25, 0.10, 0.05, 0.01]
+
+def escolha_produto():
     contador = 0
     print('-' * 20)
-    print('lista de produtos:')
+    print('produtos disponiveis:')
     while contador < len(produtos):
         print(f'{contador} - {produtos[contador]} R${valoresQuantidades[contador][1]}')
         contador += 1
     print('-' * 20)
-    produto = int(input('selecione o item desejado:'))
-    return produto
-produto = selecionar_produto()
+escolha_produto()
+selecionar = int(input('selecione o produto desejado:'))
 
 def se_estiver_disponivel():
-    contador = produto
-    if 0 <= contador <= len(produtos):
+    contador = selecionar
+    if 0 <= contador < len(produtos):
         print(f'produto disponivel! ha {valoresQuantidades[contador][2]} unidades')
         print('-' * 20)
-        disponivel = valoresQuantidades[contador][2] - 1
-        return disponivel
+        valoresQuantidades[contador][2] -= 1
     else:
         print('produto indisponivel')
-estoque = se_estiver_disponivel()
+se_estiver_disponivel()
+opcao = int(input('deseja comprar? 1 - sim 2 - não'))
 
-def pagamento():
-    contador = produto
-    opçao = int(input('deseja comprar? 1 - sim 2 - não'))
-    if opçao == 1:
+def exibir_valor():
+    contador = selecionar
+    if opcao == 1:
         print(f'valor total: R${valoresQuantidades[contador][1]}')
         print('-' * 20)
-        pagar = float(input('insira o pagamento:'))
-        return pagar
-    if opçao == 2:
+    if opcao == 2:
         print('operaçao encerrada!')
-pagar = pagamento()
+exibir_valor()
+pagar = float(input('insira o pagamento:'))
 
 def verificar_pagamento():
-    contador = produto
-    pagamento = pagar
-    if  pagamento >= valoresQuantidades[contador][1] :
+    contador = selecionar
+    comprar= pagar
+    if comprar >= valoresQuantidades[contador][1]:
         print('retirando o produto...')
         print('-' * 20)
         print(f'pegue sua {produtos[contador]}')
-        return print()
     else:
         print('dinheiro insuficiente! ')
-suficiente = verificar_pagamento()
+verificar_pagamento()
+
+def calcular_troco():
+    contador = selecionar
+    troco = pagar - valoresQuantidades[contador][1]
+    if troco <= 0:
+        print('sem troco!')
+    else:
+        print(f'seu troco: {troco}')
+calcular_troco()
+
