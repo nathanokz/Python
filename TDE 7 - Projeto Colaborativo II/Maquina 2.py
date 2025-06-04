@@ -24,23 +24,17 @@ while True:
             if modos == 1:
                 novo_produto = str(input('insira o nome do produto:'))
                 produtos.append(novo_produto)
+                novo_preço = float(input('insira o preço do produto:'))
+                unidades = int(input('insira o numero de unidades do produto:'))
+                novo_id = len(valoresQuantidades) + 1
+                valoresQuantidades.append([novo_id, novo_preço, unidades])
                 print('cadastrando produto...\nproduto cadastrado!')
-                print(produtos)
 
             elif modos == 2:
                 for i in range(len(produtos)):
                     print(f'{i} - {produtos[i]}')
                 produto_remover = int(input('escolha o produto que voce deseja remover:'))
-                if produto_remover == 0:
-                    produtos.remove(produtos[0])
-                elif produto_remover == 1:
-                    produtos.remove(produtos[1])
-                elif produto_remover == 2:
-                    produtos.remove(produtos[2])
-                elif produto_remover == 3:
-                    produtos.remove(produtos[3])
-                elif produto_remover == 4:
-                    produtos.remove(produtos[4])
+                produtos.remove(produtos[produto_remover])
                 print('removendo produto...\nproduto removido!')
                 print(produtos)
 
@@ -49,8 +43,11 @@ while True:
                     print(f'{i} - {produtos[i]}')
                 selecao_produto = int(input('qual produto voce deseja trocar o preço:'))
                 novo_preco = float(input('insira o novo preço do produto:'))
+                nova_qtd = str(input('insira a nova quantidade do produto:'))
                 valoresQuantidades[selecao_produto][1] = novo_preco
+                valoresQuantidades[selecao_produto][2] = nova_qtd
                 print('substituindo valor...\nvalor trocado com sucesso!')
+                print(valoresQuantidades)
         modo_administrador()
 
     if escolha == 2:
@@ -93,8 +90,18 @@ while True:
 
         def calcular_troco(selecionar, pagar):
             troco = pagar - valoresQuantidades[selecionar][1]
+            cedulas_moedas = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
+            troco_centavos = int(troco * 100 + 0.5)
             if troco > 0:
-                print(f'seu troco: {troco}')
+                print('seu troco:')
+                for valor in cedulas_moedas:
+                    quantidade = troco_centavos // valor
+                    if quantidade > 0:
+                        if valor >= 100:
+                            print(f'{quantidade} cédula(s) de R$ {valor // 100}')
+                        else:
+                            print(f'{quantidade} moeda(s) de R$ {valor / 100:.2f}')
+                        troco_centavos -= quantidade * valor
             else:
                 print('sem troco!')
         calcular_troco(selecionar, pagar)
