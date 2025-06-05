@@ -1,100 +1,131 @@
-valoresQuantidades = [
+from time import sleep
+
+valores_e_quantidades = [
     [1, 3.75, 2],
     [2, 3.67, 5],
     [3, 9.96, 1],
     [4, 1.25, 100],
-    [5, 13.99, 2]
+    [5, 13.99, 2],
 ]
 
 produtos = ['Coca-Cola', 'Pepsi', 'Monster', 'Café', 'Redbull']
 
 while True:
 
-    def modalidade():
-        print('-' * 20)
-        print('1 - modo administrador')
-        print('2 - comprar')
-        return int(input('escolha o modo:'))
-    escolha = modalidade()
+    def seleção_de_modo():
+        print('-=' * 20)
+        sleep(2)
+        print('Bem-vindo a Máquina de Bebidas! \n1 -> Modo Administrador \n2 -> Comprar')
+        return int(input('Selecione o modo desejado:'))
+    escolha = seleção_de_modo()
 
     if escolha == 1:
+
         def modo_administrador():
-            print('-' * 20)
-            modos = int(input('voce deseja 1 - cadastrar 2 - remover ou 3 - editar produtos:'))
-            if modos == 1:
-                novo_produto = str(input('insira o nome do produto:'))
-                produtos.append(novo_produto)
-                novo_preço = float(input('insira o preço do produto:'))
-                unidades = int(input('insira o numero de unidades do produto:'))
-                novo_id = len(valoresQuantidades) + 1
-                valoresQuantidades.append([novo_id, novo_preço, unidades])
-                print('cadastrando produto...\nproduto cadastrado!')
+            print('-=' * 20)
+            print('Você está no modo administrador!')
+            print('1 -> Cadastrar Produto \n2 -> Editar Produtor \n3 -> Remover Produto ')
+            return int(input('Selecione a opção desejada:'))
+        modos = modo_administrador()
 
-            elif modos == 2:
-                for i in range(len(produtos)):
-                    print(f'{i} - {produtos[i]}')
-                produto_remover = int(input('escolha o produto que voce deseja remover:'))
-                produtos.remove(produtos[produto_remover])
-                print('removendo produto...\nproduto removido!')
-                print(produtos)
+        if modos == 1:
+            print('-=' * 20)
+            print('Você selecionou a opção cadastar produto!')
+            novo_nome = str(input('Insira o nome do novo produto:'))
+            novo_preço = float(input('Insira o preço do novo produto:'))
+            qtd_produto = int(input('Insira a quantidade disponível do novo produto:'))
+            novo_id = len(valores_e_quantidades) + 1
+            print(f'Cadastrando produto...')
+            sleep(2)
+            print('Produto cadastrado com sucesso!')
+            produtos.append(novo_nome)
+            valores_e_quantidades.append([novo_id, novo_preço, qtd_produto])
 
-            elif modos == 3:
-                for i in range(len(produtos)):
-                    print(f'{i} - {produtos[i]}')
-                selecao_produto = int(input('qual produto voce deseja trocar o preço:'))
-                novo_preco = float(input('insira o novo preço do produto:'))
-                nova_qtd = str(input('insira a nova quantidade do produto:'))
-                valoresQuantidades[selecao_produto][1] = novo_preco
-                valoresQuantidades[selecao_produto][2] = nova_qtd
-                print('substituindo valor...\nvalor trocado com sucesso!')
-                print(valoresQuantidades)
-        modo_administrador()
+        if modos == 2:
+            print('-=' * 20)
+            print('Você selecionou a opção editar produto!')
+            for i in range (len(produtos)):
+                print(f'{i} -> {produtos[i]} R$ {valores_e_quantidades[i][1]}')
+            produto_id = int(input('Insira o ID do produto que você deseja editar:'))
+            editar_preço = float(input('Insira o novo preço do produto:'))
+            editar_qtd = int(input('Insira a nova quantidade do produto:'))
+            print('Editando produto...')
+            sleep(2)
+            print('Produto editado com sucesso!')
+            valores_e_quantidades[produto_id][1] = editar_preço
+            valores_e_quantidades[produto_id][2] = editar_qtd
+
+        if modos == 3:
+            print('-=' * 20)
+            print('Você selecionou a opção remover produto!')
+            for i in range (len(produtos)):
+                print(f'{i} -> {produtos[i]} R$ {valores_e_quantidades[i][1]}')
+            remover_produto = int(input('Insira o ID do produto que você deseja remover:'))
+            print('Removendo produto...')
+            sleep(2)
+            print('Produto removido com sucesso!')
+            produtos.remove(produtos[remover_produto])
 
     if escolha == 2:
-        def escolha_produto():
-            print('-' * 20)
-            print('produtos disponiveis:')
-            for i in range(len(produtos)):
-                print(f'{i} - {produtos[i]} R${valoresQuantidades[i][1]}')
-            print('-' * 20)
-            return int(input('selecione o item desejado:'))
-        selecionar = escolha_produto()
 
-        def se_estiver_disponivel(selecionar):
-            if valoresQuantidades[selecionar][2] > 0:
-                if 0 <= selecionar < len(produtos):
-                    print(f'produto disponivel! ha {valoresQuantidades[selecionar][2]} unidades')
-                    print('-' * 20)
-                    return int(input('deseja comprar? 1 - sim 2 - nao'))
-                else:
-                    print('produto indisponivel!')
-        comprar = se_estiver_disponivel(selecionar)
+        def escolher_produto():
+            print('-=' * 20)
+            print('Você está no modo de compra!')
+            for i in range (len(produtos)):
+                print(f'{i} -> {produtos[i]} R$ {valores_e_quantidades[i][1]}')
+            return int(input('Selecione o produto que você deseja comprar:'))
+        produto_selecionado = escolher_produto()
+        if produto_selecionado < 0 or produto_selecionado >= len(produtos):
+                print('ID inválido! Selecione uma bebida válida!')
+                continue
 
-        def pagamento(selecionar, comprar):
-            if comprar == 1:
-                print(f'valor total: R${valoresQuantidades[selecionar][1]}')
-                print('-' * 20)
-                return float(input('insira o pagamento:'))
-            if comprar == 2:
-                print('operaçao encerrada')
-        pagar = pagamento(selecionar, comprar)
+        def se_estiver_disponivel(produto_selecionado):
+            print('-=' * 20)
+            if valores_e_quantidades[produto_selecionado][2] > 0:
+                for i in range (len(produtos)):
+                    print(f'Você escolheu: {produtos[produto_selecionado]}! Há {valores_e_quantidades[produto_selecionado][2]} unidades!')
+                    return int(input('Você deseja comprar o produto? \n1 - Sim \n2 - Não \nSelecione a opção desejada:'))
+        if valores_e_quantidades[produto_selecionado][2] <= 0:
+            print(f'Você escolheu: {produtos[produto_selecionado]}, porém está indisponível =(')
+            continue
+        deseja_comprar = se_estiver_disponivel(produto_selecionado)
 
-        def verificar_pagamento(selecionar, pagar):
-            if pagar >= valoresQuantidades[selecionar][1]:
-                print('retirando produto...')
-                print('-' * 20)
-                print(f'pegue sua {produtos[selecionar]}')
+        def pagamento(produto_selecionado, deseja_comprar):
+            print('-=' * 20)
+            if deseja_comprar == 1:
+                print('Boa escolha! É uma ótima bebida!')
+                print(f'O valor total é de: R$ {valores_e_quantidades[produto_selecionado][1]}')
+                return float(input('Insira o pagamento:'))
+            if deseja_comprar == 2:
+                print('Você pode escolher outra bebida se quiser!')
+                print('Encerrando operação...')
+                sleep(2)
+                print('Operação encerrada!')
+        fazendo_pagamento = pagamento(produto_selecionado, deseja_comprar)
+
+        def conferindo_pagamento(produto_selecionado, deseja_comprar, fazendo_pagamento):
+            print('-=' * 20)
+            if fazendo_pagamento >= valores_e_quantidades[produto_selecionado][1]:
+                print('Efetuando pagamento...')
+                sleep(2)
+                print('Pagamento efetuado com sucesso!')
+                print('Retirando sua bebida...')
+                sleep(2)
+                print(f'Pegue seu/sua {produtos[produto_selecionado]}! \nObrigado pela preferência! Tenha um ótimo dia!')
             else:
-                print('dinheiro insuficiente')
-        verificar_pagamento(selecionar, pagar)
+                print('Dinheiro insuficiente =( \nVocê pode tentar outra bebida!')
+        conferir_pagamento = conferindo_pagamento(produto_selecionado, deseja_comprar, fazendo_pagamento)
 
-        def calcular_troco(selecionar, pagar):
-            troco = pagar - valoresQuantidades[selecionar][1]
-            cedulas_moedas = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
+        #CODIGO DE TROCO CHAT GPT! ESTUDAR!
+
+        def calcular_troco(produto_selecionado, deseja_comprar, fazendo_pagamento):
+            print('-=' * 20)
+            troco = fazendo_pagamento - valores_e_quantidades[produto_selecionado][1]
+            cedulas_e_moedas = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
             troco_centavos = int(troco * 100 + 0.5)
             if troco > 0:
-                print('seu troco:')
-                for valor in cedulas_moedas:
+                print(f'Seu troco é: R$ {troco:.2f}')
+                for valor in cedulas_e_moedas:
                     quantidade = troco_centavos // valor
                     if quantidade > 0:
                         if valor >= 100:
@@ -102,9 +133,8 @@ while True:
                         else:
                             print(f'{quantidade} moeda(s) de R$ {valor / 100:.2f}')
                         troco_centavos -= quantidade * valor
+                    valores_e_quantidades[produto_selecionado][2] -= 1
             else:
-                print('sem troco!')
-        calcular_troco(selecionar, pagar)
-
-
+                print('Você não tem troco!')
+        dinheiro_de_troco = calcular_troco(produto_selecionado, deseja_comprar, fazendo_pagamento)
 
