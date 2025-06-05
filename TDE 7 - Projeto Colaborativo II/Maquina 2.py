@@ -118,6 +118,21 @@ while True:
 
         #CODIGO DE TROCO CHAT GPT! ESTUDAR!
 
+        estoque_troco = {
+            10000: 2,  # R$ 100,00 → 2 unidades
+            5000: 3,  # R$ 50,00
+            2000: 5,  # R$ 20,00
+            1000: 5,  # R$ 10,00
+            500: 5,  # R$ 5,00
+            200: 10,  # R$ 2,00
+            100: 20,  # R$ 1,00
+            50: 30,  # R$ 0,50
+            25: 40,  # R$ 0,25
+            10: 50,  # R$ 0,10
+            5: 50,  # R$ 0,05
+            1: 100  # R$ 0,01
+        }
+
         def calcular_troco(produto_selecionado, deseja_comprar, fazendo_pagamento):
             print('-=' * 20)
             troco = fazendo_pagamento - valores_e_quantidades[produto_selecionado][1]
@@ -133,7 +148,7 @@ while True:
                         else:
                             print(f'{quantidade} moeda(s) de R$ {valor / 100:.2f}')
                         troco_centavos -= quantidade * valor
-                    valores_e_quantidades[produto_selecionado][2] -= 1
+                valores_e_quantidades[produto_selecionado][2] -= 1
             else:
                 print('Você não tem troco!')
         dinheiro_de_troco = calcular_troco(produto_selecionado, deseja_comprar, fazendo_pagamento)
