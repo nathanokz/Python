@@ -95,7 +95,14 @@ while True:
             if deseja_comprar == 1:
                 print('Boa escolha! É uma ótima bebida!')
                 print(f'O valor total é de: R$ {valores_e_quantidades[produto_selecionado][1]}')
-                return float(input('Insira o pagamento:'))
+
+                while True:
+                    pagamento = float(input('Insira o pagamento:'))
+                    if pagamento >= valores_e_quantidades[produto_selecionado][1]:
+                        return pagamento
+                    else:
+                        print('Valor insuficiente! Tente Novamente!')
+
             if deseja_comprar == 2:
                 print('Você pode escolher outra bebida se quiser!')
                 print('Encerrando operação...')
@@ -152,4 +159,3 @@ while True:
             else:
                 print('Você não tem troco!')
         dinheiro_de_troco = calcular_troco(produto_selecionado, deseja_comprar, fazendo_pagamento)
-
