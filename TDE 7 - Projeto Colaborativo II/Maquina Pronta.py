@@ -65,7 +65,6 @@ def calcular_troco(produto_selecionado, fazendo_pagamento):
 
 def seleção_de_modo():
     print('-=' * 20)
-    sleep(1)
     print('Bem-vindo a Máquina de Bebidas! \n1 -> Modo Administrador \n2 -> Comprar')
     return int(input('Selecione o modo desejado: '))
 
@@ -107,13 +106,12 @@ def pagamento(produto_selecionado, deseja_comprar):
     elif deseja_comprar == 2:
         print('Você pode escolher outra bebida se quiser!')
         print('Encerrando operação...')
-        sleep(1)
         print('Operação encerrada!')
         return None
 
 def conferindo_pagamento(produto_selecionado, deseja_comprar, fazendo_pagamento):
     print('-=' * 20)
-    if fazendo_pagamento is not None and fazendo_pagamento >= valores_e_quantidades[produto_selecionado][1]:
+    if fazendo_pagamento >= valores_e_quantidades[produto_selecionado][1]:
         print('Pagamento efetuado com sucesso!')
         print('Retirando sua bebida...')
         sleep(1)
@@ -135,7 +133,7 @@ while True:
             qtd_produto = int(input('Insira a quantidade disponível do novo produto: '))
             novo_id = len(valores_e_quantidades) + 1
             print('Cadastrando produto...')
-            sleep(1)
+            sleep(2)
             produtos.append(novo_nome)
             valores_e_quantidades.append([novo_id, novo_preço, qtd_produto])
             print('Produto cadastrado com sucesso!')
@@ -149,7 +147,7 @@ while True:
             editar_preço = float(input('Insira o novo preço do produto: '))
             editar_qtd = int(input('Insira a nova quantidade do produto: '))
             print('Editando produto...')
-            sleep(1)
+            sleep(2)
             valores_e_quantidades[produto_id][1] = editar_preço
             valores_e_quantidades[produto_id][2] = editar_qtd
             print('Produto editado com sucesso!')
@@ -161,9 +159,8 @@ while True:
                 print(f'{i} -> {produtos[i]} R$ {valores_e_quantidades[i][1]:.2f}')
             remover_produto = int(input('Insira o ID do produto que você deseja remover: '))
             print('Removendo produto...')
-            sleep(1)
-            produtos.pop(remover_produto)
-            valores_e_quantidades.pop(remover_produto)
+            sleep(2)
+            produtos.remove(produtos[remover_produto])
             print('Produto removido com sucesso!')
 
     elif escolha == 2:
