@@ -144,12 +144,14 @@ while True:
             for i in range(len(produtos)):
                 print(f'{i} -> {produtos[i]} R$ {valores_e_quantidades[i][1]:.2f}')
             produto_id = int(input('Insira o ID do produto que você deseja editar: '))
+            editar_nome = str(input('Edite o nome do produto:'))
             editar_preço = float(input('Insira o novo preço do produto: '))
             editar_qtd = int(input('Insira a nova quantidade do produto: '))
             print('Editando produto...')
             sleep(2)
             valores_e_quantidades[produto_id][1] = editar_preço
             valores_e_quantidades[produto_id][2] = editar_qtd
+            produtos[produto_id] = editar_nome  
             print('Produto editado com sucesso!')
 
         elif modos == 3:
@@ -172,18 +174,17 @@ while True:
 
         deseja_comprar = se_estiver_disponivel(produto_selecionado)
         if deseja_comprar == 2:
-            continue  # volta para seleção de modo
+            continue
 
         fazendo_pagamento = pagamento(produto_selecionado, deseja_comprar)
         if fazendo_pagamento is None:
-            continue  # usuário cancelou a compra
+            continue
 
         troco = calcular_troco(produto_selecionado, fazendo_pagamento)
         if troco is None:
             print('Venda cancelada devido à falta de troco.')
-            continue  # volta para o início sem descontar estoque
+            continue
 
-        # Se tudo OK, desconta o estoque do produto
         valores_e_quantidades[produto_selecionado][2] -= 1
 
         conferindo_pagamento(produto_selecionado, deseja_comprar, fazendo_pagamento)
