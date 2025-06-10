@@ -28,17 +28,11 @@ estoque_troco = {
 def calcular_troco(produto_selecionado, fazendo_pagamento):
     print('-=' * 20)
     troco = fazendo_pagamento - valores_e_quantidades[produto_selecionado][1]
-    if troco < 0:
-        print('Pagamento insuficiente! Venda cancelada.')
-        return None
-    elif troco == 0:
-        print('Pagamento exato, sem troco.')
-        return {}
 
     troco_centavos = int(round(troco * 100))
     troco_usado = {}
 
-    for moeda in sorted(estoque_troco.keys(), reverse=True):
+    for moeda in sorted(estoque_troco, reverse=True):
         moeda_centavos = int(round(moeda * 100))
         quantidade_necessaria = troco_centavos // moeda_centavos
         quantidade_usada = min(quantidade_necessaria, estoque_troco[moeda])
@@ -151,7 +145,7 @@ while True:
             sleep(2)
             valores_e_quantidades[produto_id][1] = editar_preço
             valores_e_quantidades[produto_id][2] = editar_qtd
-            produtos[produto_id] = editar_nome  
+            produtos[produto_id] = editar_nome
             print('Produto editado com sucesso!')
 
         elif modos == 3:
@@ -162,7 +156,8 @@ while True:
             remover_produto = int(input('Insira o ID do produto que você deseja remover: '))
             print('Removendo produto...')
             sleep(2)
-            produtos.remove(produtos[remover_produto])
+            del produtos[remover_produto]
+            del valores_e_quantidades[remover_produto]
             print('Produto removido com sucesso!')
 
     elif escolha == 2:
