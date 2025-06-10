@@ -108,7 +108,7 @@ def conferindo_pagamento(produto_selecionado, deseja_comprar, fazendo_pagamento)
     if fazendo_pagamento >= valores_e_quantidades[produto_selecionado][1]:
         print('Pagamento efetuado com sucesso!')
         print('Retirando sua bebida...')
-        sleep(1)
+        sleep(2)
         print(f'Pegue seu/sua {produtos[produto_selecionado]}! \nObrigado pela preferência! Tenha um ótimo dia!')
     else:
         print('Dinheiro insuficiente =( \nVocê pode tentar outra bebida!')
